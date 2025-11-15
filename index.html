@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head> <link rel="icon" type="image/png" sizes="32x32" href="logo2.png">
+<link rel="icon" type="image/png" sizes="64x64" href="logo2.png">
+<link rel="icon" type="image/png" sizes="128x128" href="logo2.png">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projeto Florescer</title>
+
+<!-- BOOTSTRAP -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ------------------------------------------------ */
+/* CORES */
+/* ------------------------------------------------ */
+:root {
+    --marrom1: rgb(201, 96, 53);
+    --marrom2: rgb(68, 26, 0);
+    --amarelo: rgb(238, 195, 43);
+    --fonte-marrom: rgb(77, 26, 4);
+}
+
+/* ------------------------------------------------ */
+/* GLOBAL */
+/* ------------------------------------------------ */
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--fonte-marrom);
+    background-color: #fffaf4;
+    scroll-behavior: smooth;
+}
+
+/* ------------------------------------------------ */
+/* NAVBAR */
+/* ------------------------------------------------ */
+.navbar {
+    background: linear-gradient(90deg, #000, #2b0f00);
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--amarelo) !important;
+    letter-spacing: 1px;
+}
+
+.navbar-nav .nav-link {
+    color: #f5e4cf !important;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-left: 18px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--amarelo) !important;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: var(--amarelo);
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 60%;
+}
+
+/* ------------------------------------------------ */
+/* HERO */
+/* ------------------------------------------------ */
+.hero {
+    background: linear-gradient(180deg, #000 0%, #2b0f00 100%);
+    padding: 150px 20px 140px;
+    text-align: center;
+    color: white;
+}
+
+.hero img {
+    max-width: 260px;
+    animation: fadeIn 1.3s ease-in-out;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-top: 25px;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 750px;
+    margin: 20px auto 0;
+    animation: fadeInUp 1.8s ease-in-out;
+}
+
+.btn-florescer {
+    background-color: var(--marrom1);
+    color: white;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    border-radius: 40px;
+    border: none;
+    transition: 0.3s;
+    margin-top: 30px;
+}
+
+.btn-florescer:hover {
+    background-color: var(--amarelo);
+    color: var(--marrom2);
+}
+
+/* ------------------------------------------------ */
+/* SEÇÕES */
+/* ------------------------------------------------ */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.3rem;
+    text-align: center;
+    color: var(--marrom2);
+    margin-bottom: 40px;
+}
+
+.text-block {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 35px;
+    border-left: 6px solid var(--marrom1);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+/* ------------------------------------------------ */
+/* PSICÓLOGOS — FINAL, LIMPO E CORRIGIDO */
+/* ------------------------------------------------ */
+
+/* Card base */
+.psicologo-card {
+    background: white;
+    border-radius: 22px;
+    padding: 36px 26px 26px;
+    border: 1px solid rgba(201, 96, 53, 0.25);
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+
+    transition: 0.3s;
+}
+
+.psicologo-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Foto */
+.psicologo-foto {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 30px auto 18px;
+    border: 5px solid var(--amarelo);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.psicologo-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Textos */
+.psicologo-nome {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.psicologo-crp {
+    font-weight: 600;
+    color: var(--marrom1);
+}
+
+.psicologo-bio {
+    font-size: 0.94rem;
+    margin-top: 10px;
+    text-align: justify;
+}
+
+/* Botão no rodapé */
+.psicologo-card button {
+    margin-top: auto !important;
+}
+
+/* ------------------------------------------------ */
+/* FUNDADORES — DESTAQUE REAL */
+/* ------------------------------------------------ */
+
+.destaque-fundadores {
+    border: 2px solid var(--marrom1);
+    background: #fff3e4;
+    position: relative;
+    padding-top: 55px; /* espaço para selo */
+}
+
+.selo-fundador {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: var(--marrom1);
+    color: #ffffff;
+
+    padding: 7px 22px;
+    border-radius: 20px;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* ------------------------------------------------ */
+/* SOCIAL BOX */
+/* ------------------------------------------------ */
+.social-box {
+    text-align: center;
+    padding: 35px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.social-box:hover {
+    transform: translateY(-5px);
+}
+
+/* ------------------------------------------------ */
+/* FLOAT ICONS */
+/* ------------------------------------------------ */
+#whatsapp-float,
+#instagram-float {
+    position: fixed;
+    z-index: 999;
+    display: block;
+}
+
+#whatsapp-float {
+    bottom: 26px;
+    right: 26px;
+}
+
+#instagram-float {
+    bottom: 26px;
+    left: 26px;
+}
+
+#whatsapp-float img,
+#instagram-float img {
+    width: 70px;
+    height: auto;
+    object-fit: contain;
+
+    transition: 0.3s ease;
+    cursor: pointer;
+    filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.25));
+}
+
+#whatsapp-float img:hover,
+#instagram-float img:hover {
+    transform: scale(1.12);
+    filter: drop-shadow(0px 6px 20px rgba(0,0,0,0.35));
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+#whatsapp-float img,
+#instagram-float img {
+    animation: pulse 2.3s infinite ease-in-out;
+}
+
+/* ------------------------------------------------ */
+/* FOOTER */
+/* ------------------------------------------------ */
+footer {
+    background-color: #000;
+    padding: 25px 0;
+    text-align: center;
+    color: white;
+    margin-top: 60px;
+    font-size: 0.95rem;
+}
+
+/* ------------------------------------------------ */
+/* ANIMAÇÕES */
+/* ------------------------------------------------ */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* -------------------------------------------- */
+/* CHUVA DE FLORES NA PÁGINA TODA — AGORA VISÍVEL */
+/* -------------------------------------------- */
+.flores-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Flor individual */
+.flor {
+    position: absolute;
+    top: -140px;
+    width: 70px;
+    height: 70px;
+
+    /* mais visível agora */
+    opacity: 0.32;
+
+    background-image: url("logo2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    animation: cair 22s linear infinite;
+}
+
+/* Animação */
+@keyframes cair {
+    0% {
+        transform: translateY(-140px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(110vh) rotate(80deg);
+    }
+}
+
+/* Variações */
+/* Variações – agora cobrindo toda a largura inclusive canto direito */
+.flor:nth-child(1) { left: 2%;  animation-duration: 22s; }
+.flor:nth-child(2) { left: 14%; animation-duration: 28s; width: 60px; opacity: 0.28; }
+.flor:nth-child(3) { left: 28%; animation-duration: 31s; width: 75px; opacity: 0.25; }
+.flor:nth-child(4) { left: 35%; animation-duration: 26s; width: 80px; opacity: 0.30; }
+.flor:nth-child(5) { left: 62%; animation-duration: 29s; width: 65px; opacity: 0.28; }
+.flor:nth-child(6) { left: 74%; animation-duration: 33s; width: 55px; opacity: 0.26; }
+.flor:nth-child(7) { left: 88%; animation-duration: 27s; width: 72px; opacity: 0.32; }
+.flor:nth-child(8) { left: 96%; animation-duration: 35s; width: 68px; opacity: 0.30; }
+
+</style>
+</head>
+
+<body>
+<div class="flores-background">
+    <div class="flor"></div>
+    <div class="flor"></div>
+    <div class="flor"></div>
+    <div class="flor"></div>
+    <div class="flor"></div>
+    <div class="flor"></div>
+    <div class="flor"></div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#topo">Projeto Florescer</a>
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                <li class="nav-item"><a class="nav-link" href="#psicologos">Equipe</a></li>
+                <li class="nav-item"><a class="nav-link" href="#valores">Valores</a></li>
+                <li class="nav-item"><a class="nav-link" href="#social">Contato</a></li>
+                <li class="nav-item"><a class="nav-link" href="#inscricao">Inscrições</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="topo">
+    <img src="logo.png" alt="Logo Projeto Florescer">
+    <h1>Projeto Florescer</h1>
+    <p>Atendimento psicológico remoto, presencial, acessível e ético-político, voltado especialmente à classe trabalhadora.</p>
+    <a href="#inscricao" class="btn btn-florescer">Quero me inscrever</a>
+</header>
+
+<!-- SOBRE -->
+<section class="container my-5" id="sobre">
+    <h2 class="section-title">Nosso Objetivo</h2>
+    <div class="text-block">
+        <p>
+            O Projeto Florescer surge da inquietação crítica frente à elitização do serviço psicológico e às desigualdades
+            estruturais que afastam a classe trabalhadora do cuidado em saúde mental. Atuamos de forma ética, politicamente sensível
+            e comprometida com uma clínica acessível, remota ou presencial, acolhendo sofrimentos ligados ao trabalho e à vida.
+        </p>
+    </div>
+</section>
+
+<!-- PSICÓLOGOS -->
+<!-- ===========================
+       SEÇÃO — NOSSA EQUIPE
+=========================== -->
+<section class="container my-5" id="psicologos">
+    <h2 class="section-title">Nossa Equipe</h2>
+
+
+    <!-- ===========================
+         FUNDADORA & COFUNDADOR
+    ============================ -->
+    <div class="row justify-content-center g-4 mb-5">
+
+        <!-- FUNDADORA -->
+        <div class="col-md-6 col-lg-5 h-100">
+            <div class="psicologo-card destaque-fundadores position-relative">
+
+                <!-- Selo -->
+                <span class="selo-fundador">FUNDADORA</span>
+
+                <div class="psicologo-foto">
+                    <img src="desiree.jpg" alt="Desirée">
+                </div>
+
+                <div class="psicologo-nome mt-2">Desirée Marata Gesualdi</div>
+                <div class="psicologo-crp">CRP: 06/173463</div>
+
+                <p class="psicologo-bio">
+                    Psicóloga e fundadora do Projeto Florescer, atuando com ética, crítica social e compromisso com o acesso da classe trabalhadora ao cuidado em saúde mental.
+                </p>
+
+                <button class="btn btn-florescer mt-3" data-bs-toggle="modal" data-bs-target="#modalDesiree">
+                    Ver currículo completo
+                </button>
+            </div>
+        </div>
+
+        <!-- COFUNDADOR -->
+        <div class="col-md-6 col-lg-5 h-100">
+            <div class="psicologo-card destaque-fundadores position-relative">
+
+                <!-- Selo -->
+                <span class="selo-fundador">COFUNDADOR</span>
+
+                <div class="psicologo-foto">
+                    <img src="gustavo.jpg" alt="Gustavo">
+                </div>
+
+                <div class="psicologo-nome mt-2">Gustavo Pichinin Rodrigues</div>
+                <div class="psicologo-crp">CRP: 08/34231</div>
+
+                <p class="psicologo-bio">
+                    Cofundador do Projeto Florescer. Atua com escuta crítica, sensível às condições materiais e sociais que atravessam o sofrimento psíquico.
+                </p>
+
+                <button class="btn btn-florescer mt-3" data-bs-toggle="modal" data-bs-target="#modalGustavo">
+                    Ver currículo completo
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ===========================
+         DEMAIS PSICÓLOGOS
+    ============================ -->
+    <div class="row g-4">
+        <!-- ===========================
+             RAQUEL
+        ============================ -->
+        <div class="col-md-6 col-lg-4">
+            <div class="psicologo-card">
+                <div class="psicologo-foto">
+                    <img src="raquel.jpg" alt="Raquel">
+                </div>
+                <div class="psicologo-nome">Raquel Figueiredo Corrêa</div>
+                <div class="psicologo-crp">CRP: 08/28720</div>
+                <p class="psicologo-bio">
+                    Psicóloga com experiência em clínica, acessibilidade e inclusão no ensino
+                    superior, com olhar ético e humano.
+                </p>
+                <button class="btn btn-florescer mt-3" data-bs-toggle="modal" data-bs-target="#modalRaquel">
+                    Ver currículo completo
+                </button>
+            </div>
+        </div>
+
+        <!-- ===========================
+             LAISA
+        ============================ -->
+        <div class="col-md-6 col-lg-4">
+            <div class="psicologo-card">
+                <div class="psicologo-foto">
+                    <img src="laisa.jpg" alt="Laisa">
+                </div>
+                <div class="psicologo-nome">Laisa da Silva Abade</div>
+                <div class="psicologo-crp">CRP: 08/34266</div>
+                <p class="psicologo-bio">
+                    Psicóloga e pesquisadora. Atua com escuta sensível e ética, considerando
+                    experiências sociais e afetivas.
+                </p>
+                <button class="btn btn-florescer mt-3" data-bs-toggle="modal" data-bs-target="#modalLaisa">
+                    Ver currículo completo
+                </button>
+            </div>
+        </div>
+
+        <!-- ===========================
+             NATALIA
+        ============================ -->
+        <div class="col-md-6 col-lg-4">
+            <div class="psicologo-card">
+                <div class="psicologo-foto">
+                    <img src="natalia.jpg" alt="Natalia">
+                </div>
+                <div class="psicologo-nome">Natalia Maria Weber</div>
+                <div class="psicologo-crp">CRP: 08/34232</div>
+                <p class="psicologo-bio">
+                    Atua com foco em crítica à medicalização e psicopatologização, 
+                    buscando uma escuta ampliada e humanizadora.
+                </p>
+                <button class="btn btn-florescer mt-3" data-bs-toggle="modal" data-bs-target="#modalNatalia">
+                    Ver currículo completo
+                </button>
+            </div>
+        </div>
+
+        <!-- ===========================
+             EDUARDO
+        ============================ -->
+        <div class="col-md-6 col-lg-4">
+            <div class="psicologo-card">
+                <div class="psicologo-foto">
+                    <img src="eduardo.jpg" alt="Eduardo">
+                </div>
+                <div class="psicologo-nome">Eduardo Voroniuk Rossetto</div>
+                <div class="psicologo-crp">CRP: 08/34346</div>
+                <p class="psicologo-bio">
+                    Psicólogo com experiência em hospital, urgência e emergência e 
+                    acolhimento familiar em momentos críticos.
+                </p>
+                <button class="btn btn-florescer mt-3" data-bs-toggle="modal" data-bs-target="#modalEduardo">
+                    Ver currículo completo
+                </button>
+            </div>
+        </div>
+
+        <!-- ===========================
+             ANA CAROLINA
+        ============================ -->
+        <div class="col-md-6 col-lg-4">
+            <div class="psicologo-card">
+                <div class="psicologo-foto">
+                    <img src="ana.jpg" alt="Ana Carolina">
+                </div>
+                <div class="psicologo-nome">Ana Carolina Teixeira</div>
+                <div class="psicologo-crp">CRP: 08/34201</div>
+                <p class="psicologo-bio">
+                    Atua na clínica e em projetos com adolescentes, educação e inclusão, 
+                    prezando por uma escuta ética e comprometida.
+                </p>
+                <button class="btn btn-florescer mt-3" data-bs-toggle="modal" data-bs-target="#modalAna">
+                    Ver currículo completo
+                </button>
+            </div>
+        </div>
+
+        <!-- ===========================
+             GIULIA
+        ============================ -->
+        <div class="col-md-6 col-lg-4">
+            <div class="psicologo-card">
+                <div class="psicologo-foto">
+                    <img src="giulia.jpg" alt="Giulia">
+                </div>
+                <div class="psicologo-nome">Giulia Maria Siqueira Dias</div>
+                <div class="psicologo-crp">CRP: 08/34250</div>
+                <p class="psicologo-bio">
+                    Psicóloga com experiência em CAPSi, psicanálise, pesquisa extensionista 
+                    e cuidado com infâncias.
+                </p>
+                <button class="btn btn-florescer mt-3" data-bs-toggle="modal" data-bs-target="#modalGiulia">
+                    Ver currículo completo
+                </button>
+            </div>
+        </div>
+
+        <!-- ===========================
+             JACKELINE
+        ============================ -->
+        <div class="col-md-6 col-lg-4">
+            <div class="psicologo-card">
+                <div class="psicologo-foto">
+                    <img src="jackeline.jpg" alt="Jackeline">
+                </div>
+                <div class="psicologo-nome">Jackeline Santos Neves da Silva</div>
+                <div class="psicologo-crp">CRP: 08/36821</div>
+                <p class="psicologo-bio">
+                    Psicóloga com atuação em análise do comportamento, suicidologia, 
+                    assistência social e clínica.
+                </p>
+                <button class="btn btn-florescer mt-3" data-bs-toggle="modal" data-bs-target="#modalJackeline">
+                    Ver currículo completo
+                </button>
+            </div>
+        </div>
+
+        <!-- ===========================
+             SUELLEN
+        ============================ -->
+        <div class="col-md-6 col-lg-4">
+            <div class="psicologo-card">
+                <div class="psicologo-foto">
+                    <img src="suellen.jpg" alt="Suellen">
+                </div>
+                <div class="psicologo-nome">Suéllen Bitencourt</div>
+                <div class="psicologo-crp">CRP: 08/34269</div>
+                <p class="psicologo-bio">
+                    Psicóloga com experiência em psicologia educacional, hospitalar e 
+                    pesquisas sobre luto e pandemia.
+                </p>
+                <button class="btn btn-florescer mt-3" data-bs-toggle="modal" data-bs-target="#modalSuellen">
+                    Ver currículo completo
+                </button>
+            </div>
+        </div>
+
+        <!-- ===========================
+             ANNA JÚLIA
+        ============================ -->
+        <div class="col-md-6 col-lg-4">
+            <div class="psicologo-card">
+                <div class="psicologo-foto">
+                    <img src="anna.jpg" alt="Anna Júlia">
+                </div>
+                <div class="psicologo-nome">Anna Júlia Osório</div>
+                <div class="psicologo-crp">CRP: 08/34324</div>
+                <p class="psicologo-bio">
+                    Atua com foco em políticas públicas, organizações e 
+                    projetos coletivos de cuidado.
+                </p>
+                <button class="btn btn-florescer mt-3" data-bs-toggle="modal" data-bs-target="#modalAnnaJulia">
+                    Ver currículo completo
+                </button>
+            </div>
+        </div>
+
+        <!-- ===========================
+             GUILHERME
+        ============================ -->
+        <div class="col-md-6 col-lg-4">
+            <div class="psicologo-card">
+                <div class="psicologo-foto">
+                    <img src="guilherme.jpg" alt="Guilherme">
+                </div>
+                <div class="psicologo-nome">Guilherme Theobaldo Ragioto</div>
+                <div class="psicologo-crp">CRP: 08/34220</div>
+                <p class="psicologo-bio">
+                    Psicólogo com atuação em grupos de pesquisa, saúde do trabalhador 
+                    e temas ligados a dissidências.
+                </p>
+                <button class="btn btn-florescer mt-3" data-bs-toggle="modal" data-bs-target="#modalGuilherme">
+                    Ver currículo completo
+                </button>
+            </div>
+        </div>
+
+        <!-- ===========================
+             NATH
+        ============================ -->
+        <div class="col-md-6 col-lg-4">
+            <div class="psicologo-card">
+                <div class="psicologo-foto">
+                    <img src="nath.jpg" alt="Nath">
+                </div>
+                <div class="psicologo-nome">Nath Palmeira</div>
+                <div class="psicologo-crp">CRP: 08/43396</div>
+                <p class="psicologo-bio">
+                    Psicóloga com trajetória marcada por cuidado clínico, 
+                    projetos sociais e extensão universitária.
+                </p>
+                <button class="btn btn-florescer mt-3" data-bs-toggle="modal" data-bs-target="#modalNath">
+                    Ver currículo completo
+                </button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ===========================
+     MODAIS — PERFIS COMPLETOS (SEM PDF)
+=========================== -->
+
+<!-- Modal Desirée -->
+<div class="modal fade" id="modalDesiree" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Desirée Marata Gesualdi — Perfil</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex gap-3 mb-3">
+          <img src="desiree.jpg" alt="Desiree" style="width:120px;height:120px;object-fit:cover;border-radius:8px;">
+          <div>
+            <p><strong>CRP:</strong> 06/173463</p>
+            <p><strong>SOBRE:</strong> Psicóloga formada pela Universidade Estadual de Maringá (UEM). Formação na Abordagem Fenomenológico-Existencial; especialista em Psicologia Clínica na Perspectiva Fenomenológico-Existencial (IFEN-RJ). Atuação em CAPS, UBS e projetos de extensão. Pesquisadora sobre psiquiatrização, feminismos e reforma psiquiátrica. Liderança em políticas locais de saúde mental.</p>
+          </div>
+        </div>
+
+        <h6>Vivências Acadêmicas e Profissionais (seleção)</h6>
+        <ul>
+          <li>Estágio no CREAS Novos Passos (Avaré-SP).</li>
+          <li>Bolsista PIBIC-FA/UEM em pesquisa sobre psiquiatrização do corpo feminino.</li>
+          <li>Projeto de extensão no HUM/CCI com visitas domiciliares a egressos de tentativa de suicídio.</li>
+          <li>Estágio no Núcleo Maria da Penha/UEM.</li>
+          <li>Atuação em sindicatos, CAPS, atenção básica e gestão municipal em saúde mental.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Gustavo -->
+<div class="modal fade" id="modalGustavo" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Gustavo Pichinin Rodrigues — Perfil</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex gap-3 mb-3">
+          <img src="gustavo.jpg" alt="Gustavo" style="width:120px;height:120px;object-fit:cover;border-radius:8px;">
+          <div>
+            <p><strong>CRP:</strong> 08/34231</p>
+            <p><strong>SOBRE:</strong> Psicólogo formado pela UEM, com ênfase em Psicologia do Trabalho e Organizações. Especialista em Psicologia Clínica (Fenomenológico-Existencial). Experiência em CREAS, serviços públicos, grupos de pesquisa e projetos sobre saúde do trabalhador.</p>
+          </div>
+        </div>
+
+        <h6>Vivências Acadêmicas e Profissionais (seleção)</h6>
+        <ul>
+          <li>Atuação no CREAS Maria Helena (PR).</li>
+          <li>Pesquisas (PIBIC e extensão) sobre trabalho não-prescrito e saúde do trabalhador.</li>
+          <li>Atuação em sindicatos, projetos comunitários e atenção básica.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Raquel -->
+<div class="modal fade" id="modalRaquel" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Raquel Figueiredo Corrêa — Perfil</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex gap-3 mb-3">
+          <img src="raquel.jpg" alt="Raquel" style="width:120px;height:120px;object-fit:cover;border-radius:8px;">
+          <div>
+            <p><strong>CRP:</strong> 08/28720</p>
+            <p><strong>SOBRE:</strong> Psicóloga com pós em Gestão de Pessoas e Psicologia Organizacional; formação em Psicanálise Winnicotiana; experiência com inclusão, acessibilidade e acolhimento emocional no ensino superior.</p>
+          </div>
+        </div>
+
+        <h6>Vivências Acadêmicas e Profissionais (seleção)</h6>
+        <ul>
+          <li>Núcleo de Apoio Acadêmico (Unicesumar) — suporte psicopedagógico e práticas de acessibilidade.</li>
+          <li>Pesquisas sobre saúde mental e políticas de inclusão.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Laisa -->
+<div class="modal fade" id="modalLaisa" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Laisa da Silva Abade — Perfil</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex gap-3 mb-3">
+          <img src="laisa.jpg" alt="Laisa" style="width:120px;height:120px;object-fit:cover;border-radius:8px;">
+          <div>
+            <p><strong>CRP:</strong> 08/34266</p>
+            <p><strong>SOBRE:</strong> Psicóloga (UEM), mestra em Psicologia; abordagem Fenomenológico-Existencial; pesquisa sobre autocontrole, identidades e masculinidades.</p>
+          </div>
+        </div>
+
+        <h6>Vivências Acadêmicas e Profissionais (seleção)</h6>
+        <ul>
+          <li>Pesquisas (PIC, PIBIC) envolvendo Sartre, Skinner e teoria existencial.</li>
+          <li>Projetos e cursos sobre crise subjetiva, cuidado e sofrimento psíquico.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Natalia -->
+<div class="modal fade" id="modalNatalia" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Natalia Maria Weber — Perfil</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex gap-3 mb-3">
+          <img src="natalia.jpg" alt="Natalia" style="width:120px;height:120px;object-fit:cover;border-radius:8px;">
+          <div>
+            <p><strong>CRP:</strong> 08/34232</p>
+            <p><strong>SOBRE:</strong> Psicóloga pesquisadora em história da psiquiatria, medicalização e patologização. Atuação em PIC/UEM, CAPS e atenção básica.</p>
+          </div>
+        </div>
+
+        <h6>Vivências Acadêmicas e Profissionais (seleção)</h6>
+        <ul>
+          <li>Pesquisas sobre Foucault, Deleuze & Guattari e crítica à medicalização.</li>
+          <li>Atuação em CAPS II e programas de atenção psicossocial.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Eduardo -->
+<div class="modal fade" id="modalEduardo" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Eduardo Voroniuk Rossetto — Perfil</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex gap-3 mb-3">
+          <img src="eduardo.jpg" alt="Eduardo" style="width:120px;height:120px;object-fit:cover;border-radius:8px;">
+          <div>
+            <p><strong>CRP:</strong> 08/34346</p>
+            <p><strong>SOBRE:</strong> Psicólogo com atuação em Psicologia Hospitalar, projetos de extensão no HUM e residência em Urgência e Emergência.</p>
+          </div>
+        </div>
+
+        <h6>Vivências Acadêmicas e Profissionais (seleção)</h6>
+        <ul>
+          <li>Atuação em UTI-Covid e acolhimento familiar no HUM.</li>
+          <li>Residência Multiprofissional em Urgência e Emergência.</li>
+          <li>Projetos e pesquisas em Psicologia Escolar e da Saúde.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Ana -->
+<div class="modal fade" id="modalAna" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Ana Carolina Teixeira — Perfil</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex gap-3 mb-3">
+          <img src="ana.jpg" alt="Ana" style="width:120px;height:120px;object-fit:cover;border-radius:8px;">
+          <div>
+            <p><strong>CRP:</strong> 08/34201</p>
+            <p><strong>SOBRE:</strong> Psicóloga com atuação em projetos de extensão universitária, grupos de adolescentes e educação. Experiência em ERE, AERM e ensino público.</p>
+          </div>
+        </div>
+
+        <h6>Vivências Acadêmicas e Profissionais (seleção)</h6>
+        <ul>
+          <li>Pesquisa PIC-UEM — pós-modernidade e adolescência.</li>
+          <li>Projetos de arte, deficiência e educação pública.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Giulia -->
+<div class="modal fade" id="modalGiulia" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Giulia Maria Siqueira Dias — Perfil</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex gap-3 mb-3">
+          <img src="giulia.jpg" alt="Giulia" style="width:120px;height:120px;object-fit:cover;border-radius:8px;">
+          <div>
+            <p><strong>CRP:</strong> 08/34250</p>
+            <p><strong>SOBRE:</strong> Psicóloga com experiência em CAPSi, grupos de pesquisa, extensão universitária e atuação clínica com enfoque psicanalítico.</p>
+          </div>
+        </div>
+
+        <h6>Vivências Acadêmicas e Profissionais (seleção)</h6>
+        <ul>
+          <li>Pesquisa PIBIC e atuação no LEPEPSIG.</li>
+          <li>Projetos sobre violência sexual infantil e cuidado infantojuvenil.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Jackeline -->
+<div class="modal fade" id="modalJackeline" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Jackeline Santos Neves da Silva — Perfil</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex gap-3 mb-3">
+          <img src="jackeline.jpg" alt="Jackeline" style="width:120px;height:120px;object-fit:cover;border-radius:8px;">
+          <div>
+            <p><strong>CRP:</strong> 08/36821</p>
+            <p><strong>SOBRE:</strong> Psicóloga com experiência em análise do comportamento, suicidologia, CRAS e serviços clínicos.</p>
+          </div>
+        </div>
+
+        <h6>Vivências Acadêmicas e Profissionais (seleção)</h6>
+        <ul>
+          <li>Pesquisas sobre suicídio e sofrimento psíquico.</li>
+          <li>Estágios em serviços públicos e projetos comunitários.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Suellen -->
+<div class="modal fade" id="modalSuellen" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Suéllen Bitencourt — Perfil</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex gap-3 mb-3">
+          <img src="suellen.jpg" alt="Suellen" style="width:120px;height:120px;object-fit:cover;border-radius:8px;">
+          <div>
+            <p><strong>CRP:</strong> 08/34269</p>
+            <p><strong>SOBRE:</strong> Psicóloga com atuação em psicologia escolar, clínica, hospitalar e pesquisas sobre luto e pandemia.</p>
+          </div>
+        </div>
+
+        <h6>Vivências Acadêmicas e Profissionais (seleção)</h6>
+        <ul>
+          <li>Projetos e pesquisas no HUM.</li>
+          <li>Atuação em escolas e serviços de saúde mental.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Anna Julia -->
+<div class="modal fade" id="modalAnnaJulia" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Anna Júlia Osório — Perfil</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex gap-3 mb-3">
+          <img src="annajulia.jpg" alt="Anna Júlia" style="width:120px;height:120px;object-fit:cover;border-radius:8px;">
+          <div>
+            <p><strong>CRP:</strong> 08/34324</p>
+            <p><strong>SOBRE:</strong> Psicóloga com atuação em espaços coletivos, políticas públicas, psicologia organizacional e projetos comunitários.</p>
+          </div>
+        </div>
+
+        <h6>Vivências Acadêmicas e Profissionais (seleção)</h6>
+        <ul>
+          <li>Participação em projetos acadêmicos, conselhos e laboratórios.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Guilherme -->
+<div class="modal fade" id="modalGuilherme" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Guilherme Theobaldo Ragioto — Perfil</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex gap-3 mb-3">
+          <img src="guilherme.jpg" alt="Guilherme" style="width:120px;height:120px;object-fit:cover;border-radius:8px;">
+          <div>
+            <p><strong>CRP:</strong> 08/34220</p>
+            <p><strong>SOBRE:</strong> Psicólogo com foco em saúde do trabalhador, clínica e pesquisas acadêmicas sobre dissidências e marginalização.</p>
+          </div>
+        </div>
+
+        <h6>Vivências Acadêmicas e Profissionais (seleção)</h6>
+        <ul>
+          <li>Pesquisa PIBIC sobre doação de sangue, minorias e saúde pública.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Nath -->
+<div class="modal fade" id="modalNath" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Nath Palmeira — Perfil</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex gap-3 mb-3">
+          <img src="nath.jpg" alt="Nath" style="width:120px;height:120px;object-fit:cover;border-radius:8px;">
+          <div>
+            <p><strong>CRP:</strong> 08/43396</p>
+            <p><strong>SOBRE:</strong> Psicóloga com trajetória marcada por atuação clínica, extensão universitária e projetos sociais. Experiências completas disponíveis no currículo interno do projeto.</p>
+          </div>
+        </div>
+
+        <h6>Vivências Acadêmicas e Profissionais (seleção)</h6>
+        <ul>
+          <li>Projetos de extensão e atuação clínica em diferentes contextos.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===========================
+     FIM DOS MODAIS
+=========================== -->
+
+
+<!-- VALORES -->
+<section class="container my-5" id="valores">
+    <h2 class="section-title">Valores Acessíveis</h2>
+    <div class="text-block">
+        <p>
+            O Florescer acredita que o cuidado psicológico é um direito universal. Por isso, praticamos valores acessíveis,
+            ajustados à realidade financeira de cada pessoa atendida. Os valores são conversados de forma ética e transparente
+            durante o processo de inscrição.
+        </p>
+    </div>
+</section>
+
+<!-- CONTATO SOCIAL -->
+<section class="container my-5" id="social">
+    <h2 class="section-title">Contato & Redes</h2>
+
+    <div class="row g-4 justify-content-center">
+
+        <!-- INSTAGRAM -->
+        <div class="col-10 col-md-5 col-lg-4">
+            <a class="social-box d-block text-decoration-none text-dark" href="https://www.instagram.com/pflorescerpsi/" target="_blank">
+                <img src="instagram.png" width="60" alt="Instagram">
+                <h4 class="mt-3">Instagram</h4>
+                <p>@pflorescerpsi</p>
+            </a>
+        </div>
+
+        <!-- WHATSAPP — substitui o e-mail -->
+        <div class="col-10 col-md-5 col-lg-4">
+            <a class="social-box d-block text-decoration-none text-dark"
+               href="https://api.whatsapp.com/send/?phone=5544997110093&text=Olá!%20Quero%20saber%20mais%20sobre%20o%20Projeto%20Florescer."
+               target="_blank">
+                <i class="fa-brands fa-whatsapp fa-3x" style="color: #25D366;"></i>
+                <h4 class="mt-3">WhatsApp</h4>
+                <p>(44) 99711-0093</p>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- INSCRIÇÕES -->
+<section class="container my-5" id="inscricao">
+    <h2 class="section-title">Inscrições & Formulários</h2>
+
+    <div class="row g-4">
+
+        <!-- ONLINE -->
+        <div class="col-md-6 col-lg-4">
+            <div class="social-box d-flex flex-column h-100">
+                <i class="fa-solid fa-laptop-medical fa-2x" style="color: var(--marrom1);"></i>
+                <h4 class="mt-3">Psicoterapia Online</h4>
+                <p>Para qualquer lugar do Brasil ou brasileiros no exterior.</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScOjn8sfqFVhK-hMuQwnyCwHg9v-1mEDzUpSNpx5IYp2LG3Bw/viewform" target="_blank" class="btn btn-florescer mt-auto">Preencher Formulário</a>
+            </div>
+        </div>
+
+        <!-- PRESENCIAL -->
+        <div class="col-md-6 col-lg-4">
+            <div class="social-box d-flex flex-column h-100">
+                <i class="fa-solid fa-building-user fa-2x" style="color: var(--marrom1);"></i>
+                <h4 class="mt-3">Presencial (Maringá – PR)</h4>
+                <p>Para quem busca acolhimento presencial em Maringá.</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScIW5KSHBWRO5eXKNjoD6OOV3QvTBlzjTC-r4FVaFFE0NPdVw/viewform" target="_blank" class="btn btn-florescer mt-auto">Preencher Formulário</a>
+            </div>
+        </div>
+
+        <!-- CRIANÇAS E ADOLESCENTES -->
+        <div class="col-md-6 col-lg-4">
+            <div class="social-box d-flex flex-column h-100">
+                <i class="fa-solid fa-children fa-2x" style="color: var(--marrom1);"></i>
+                <h4 class="mt-3">Crianças & Adolescentes (12–18)</h4>
+                <p>Atendimento especializado e adaptado à fase da vida.</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfdaMbIDTJJzWG3Ycqb60GtvUWO7fONe28EHmahIGgCw3deTg/viewform"
+                   target="_blank"
+                   class="btn btn-florescer mt-auto">
+                    Preencher Formulário
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FLOAT BUTTONS -->
+<!-- WhatsApp Flutuante -->
+<a id="whatsapp-float" class="float-icon"
+   href="https://api.whatsapp.com/send/?phone=5544997110093&text&type=phone_number&app_absent=0"
+   target="_blank">
+    <img src="whatsapp.png" alt="WhatsApp">
+</a>
+
+<!-- Instagram Flutuante -->
+<a id="instagram-float" class="float-icon" href="https://www.instagram.com/pflorescerpsi/" target="_blank">
+    <img src="instagram.png" alt="Instagram">
+</a>
+
+
+<!-- FOOTER -->
+<footer>
+    Projeto Florescer • 2025<br>
+    Atendimento psicológico acessível & com compromisso ético
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
